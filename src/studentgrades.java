@@ -5,6 +5,7 @@ public class studentgrades {
         boolean[] failing = new boolean[num_students];
         boolean[] passing = new boolean[num_students];
         int[] score = new int[num_students];
+        int[] freq = new int[num_students + 1];
 
         int counter = 0;
 
@@ -61,7 +62,13 @@ public class studentgrades {
             sum = score[counter] + sum;
             counter++;
         }
-        System.out.println("Sum of Scores: " + sum);
+
+        counter = 0;
+
+        while(counter < 100){
+            freq[score[counter]]++;
+            counter++;
+        }
 
         System.out.println("Average of Scores: " + (sum/100));
     }
